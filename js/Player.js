@@ -68,15 +68,15 @@ class Player {
     });
   }
 
-  getPersonajesAtEnd() {
-    database.ref("friendsAtEnd").on("value", data => {
+  getCarsAtEnd() {
+    database.ref("carsAtEnd").on("value", data => {
       this.rank = data.val();
     });
   }
 
-  static updateFriendsAtEnd(rank) {
+  static updateCarsAtEnd(rank) {
     database.ref("/").update({
-      friendsAtEnd: rank
+      carsAtEnd: rank
     });
   }
 }

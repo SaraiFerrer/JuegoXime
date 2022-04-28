@@ -1,7 +1,8 @@
 class Form {
   constructor() {
-    this.input = createInput("").attribute("", "Ingresa tu nombre");
+    this.input = createInput("").attribute("placeholder", "Ingresa tu nombre");
     this.playButton = createButton("Jugar");
+    this.titleImg = createImg("./assets/title.png", "game title");
     this.greeting = createElement("h2");
   }
 
@@ -31,7 +32,7 @@ class Form {
       this.playButton.hide();
       var message = `
       Hola ${this.input.value()}
-      </br>espera a que tu enemigo se una`;
+      </br>espera a que otro jugador se una...`;
       this.greeting.html(message);
       playerCount += 1;
       player.name = this.input.value();

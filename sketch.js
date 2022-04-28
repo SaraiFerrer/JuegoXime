@@ -1,15 +1,24 @@
 var canvas;
+var backgroundImage, car1_img, car2_img, track;
+var fuelImage, powerCoinImage, lifeImage;
+var obstacle1Image, obstacle2Image;
 var database, gameState;
+var blastImage;
 var form, player, playerCount;
-var friends=[]
+var allPlayers, car1, car2, fuels, powerCoins, obstacles;
+var cars = [];
+
 function preload() {
-  function preload(){
-    correcaminos_running = loadAnimation("ca5.png","ca4.png","ca3.png","ca2.png","ca1.png");
-    ground = loadImage("Fondo_des.png");
-    coyote_running = loadAnimation("coyote 1.png","coyote 2.png");
-    dinamita = loadImage("dinamita.png");
-    tronco = loadImage("tronco.png");
-  }
+  backgroundImage = loadImage("./assets/background.png");
+  car1_img = loadImage("../assets/car1.png");
+  car2_img = loadImage("../assets/car2.png");
+  track = loadImage("../assets/track.jpg");
+  fuelImage = loadImage("./assets/fuel.png");
+  powerCoinImage = loadImage("./assets/goldCoin.png");
+  obstacle1Image = loadImage("./assets/obstacle1.png");
+  obstacle2Image = loadImage("./assets/obstacle2.png");
+  lifeImage = loadImage("./assets/life.png");
+  blastImage = loadImage("./assets/blast.png");
 }
 
 function setup() {
@@ -21,7 +30,7 @@ function setup() {
 }
 
 function draw() {
-  background();
+  background(backgroundImage);
   if (playerCount === 2) {
     game.update(1);
   }
@@ -39,5 +48,3 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-
-
